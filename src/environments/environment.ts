@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   firebaseConfig: {
     apiKey: "AIzaSyDNHR7gJE1ynWEtQxFpPV563ZwGKHs3RjU",
-    authDomain: "trendyblogs-2020.firebaseapp.com",
+    authDomain: "https://trendy-blogs.herokuapp.com",
     databaseURL: "https://trendyblogs-2020.firebaseio.com",
     projectId: "trendyblogs-2020",
     storageBucket: "trendyblogs-2020.appspot.com",
