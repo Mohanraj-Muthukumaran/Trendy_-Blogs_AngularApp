@@ -1,5 +1,11 @@
 # TrendyBlogsApp
 
+## Trendy Blogs Live Link : 
+
+Log in With Google and Start writing your blogs from today!
+
+https://trendyblogs.herokuapp.com/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
 
 ## Development server
