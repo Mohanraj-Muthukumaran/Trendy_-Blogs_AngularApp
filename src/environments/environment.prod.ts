@@ -1,9 +1,8 @@
-
 export const environment = {
-  production: false,
+  production: true,
   firebaseConfig: {
     apiKey: "AIzaSyDNHR7gJE1ynWEtQxFpPV563ZwGKHs3RjU",
-    authDomain: "https://trendy-blogs.herokuapp.com/",
+    authDomain: "trendyblogs-2020.firebaseapp.com",
     databaseURL: "https://trendyblogs-2020.firebaseio.com",
     projectId: "trendyblogs-2020",
     storageBucket: "trendyblogs-2020.appspot.com",
@@ -12,4 +11,3 @@ export const environment = {
     measurementId: "G-ZGSNERN5BM"
   }
 };
-
