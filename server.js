@@ -9,7 +9,7 @@ app.use(express.static(__dirname + '/angularapp'));
  
 app.get('/*', function(req,res) {
     if (req.header('x-forwarded-proto') !== 'https') {
-        res.redirect(`https://${path.join(__dirname)}+'/angularapp/index.html'`)
+        res.redirect(`https://${path.join(__dirname+'/angularapp/index.html')}`)
       }
     res.sendFile(path.join(__dirname+'/angularapp/index.html'));
 });
