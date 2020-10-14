@@ -1,0 +1,32 @@
+<div class="container">
+<section>
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title> <strong>Contact Me:&nbsp;</strong> &nbsp;Mohanraj Muthukumaran (Developer) </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-form-field>
+                <input matInput placeholder="Name*" type="text" [(ngModel)]='name'>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput placeholder="Email*" type="email" [(ngModel)]='email'>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput placeholder="Phone No" type="text" [(ngModel)]='phone'> 
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <textarea rows='10' matInput placeholder="Message Here*" type="text" [(ngModel)]='message'></textarea>
+            </mat-form-field>
+            <br>
+            <button mat-raised-button color='accent' (click)='createContactData()' [disabled]='!name || !email || !message'>{{ buttontext }}</button> 
+            <br><br>
+            <h3 style="color: #ff5252;" ><strong>{{successText}}</strong></h3>           
+        </mat-expansion-panel>
+    </mat-accordion>
+</section>
+</div>
+
+

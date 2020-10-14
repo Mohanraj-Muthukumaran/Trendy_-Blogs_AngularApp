@@ -1,0 +1,41 @@
+<mat-sidenav-container style="background-color: #448aff;" class="sidenav-container">
+  <mat-sidenav style="background-color: #FAFAFA;" #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar ><span class="material-icons">dashboard</span>&nbsp;Dashboard</mat-toolbar>
+    <mat-nav-list>
+      <div *ngIf = "auth.afAuth.authState | async as user; else showLogin">
+        <a mat-list-item routerLink='/blog'><span class="material-icons">amp_stories</span>&nbsp; All Posts</a>
+        <a mat-list-item routerLink='/dashboard'><span class="material-icons">create</span>&nbsp; Create Post</a>
+        <a mat-list-item routerLink='/contact'><span class="material-icons">contact_page</span>&nbsp; Contact Us</a>
+        <a style="background-color: aliceblue; color: #448aff;" mat-list-item routerLink='/blog' (click)='auth.logout()'><span><img src="../../../assets/googleLogo.png" alt="Google"></span>&nbsp;&nbsp; Log Out</a>
+    </div>
+    <ng-template #showLogin>
+      <a mat-list-item routerLink='/blog'><span class="material-icons">amp_stories</span>&nbsp; All Posts</a>
+        <a mat-list-item routerLink='/contact'><span class="material-icons">contact_page</span>&nbsp; Contact Us</a>
+        <a style="background-color: aliceblue; color: #448aff;" mat-list-item (click)='auth.login()'><span><img src="../../../assets/googleLogo.png" alt="Google"></span>&nbsp;&nbsp;Log In</a>
+    </ng-template>
+    </mat-nav-list>
+    <!-- <footer style="background-color: #448aff; height: 64px;">
+    </footer> -->
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      &nbsp;<span routerLink='blog'>&nbsp;Trendy &nbsp;<span><img src="../../assets/trendyBlogsLogo.png" alt=""> </span>&nbsp;&nbsp;Blogs </span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <br>
+    <router-outlet></router-outlet>
+    <br><br><br><br><br>
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

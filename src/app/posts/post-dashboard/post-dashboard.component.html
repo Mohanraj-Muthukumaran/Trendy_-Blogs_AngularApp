@@ -1,0 +1,33 @@
+<div class="container">
+<section>
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>Create a &nbsp;<strong>Post</strong>&nbsp;&nbsp;as &nbsp;<strong>{{authorname}}</strong> (Author) </mat-panel-title>
+            </mat-expansion-panel-header>
+            
+            <div>
+                <input type="file" [(ngModel)]='file' id="file" (change)='uploadImage($event)'>
+                <br><br>
+                <div [hidden]='!uploadPercent'>
+                    <mat-progress-bar mode="determinate" value="{{uploadPercent | async}}"></mat-progress-bar>
+                </div><br>
+                <div [hidden]='!image'>
+                    <img [src]="image || '//:0'">
+                </div>
+            </div>
+
+            <mat-form-field>
+                <input matInput placeholder="Post Title*" type="text" [(ngModel)]='title'>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <textarea rows='10' matInput placeholder="Post Content*" type="text" [(ngModel)]='content'></textarea>
+            </mat-form-field>
+            <br>
+            <button mat-raised-button color='accent' (click)='createPost()' [disabled]='!title || !content || !image'>{{ buttonText }}</button>            
+        </mat-expansion-panel>
+    </mat-accordion>
+</section>
+</div>
+
